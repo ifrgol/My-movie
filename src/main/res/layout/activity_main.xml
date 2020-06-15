@@ -47,6 +47,39 @@
                 app:layout_constraintLeft_toLeftOf="@id/text_popular"
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginTop="8dp"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@+id/rec_popular"
+                android:id="@+id/text_latest"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="#a4a6a9"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="22dp"
+                android:text="Top Rated  "/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:id="@+id/v2"
+                app:layout_constraintLeft_toLeftOf="@id/text_latest"
+                app:layout_constraintRight_toRightOf="@id/text_latest"
+                app:layout_constraintTop_toBottomOf="@id/text_latest"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="15dp"
+                android:background="#ff5e5e"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/rec_latest"
+                app:layout_constraintTop_toBottomOf="@id/v2"
+                app:layout_constraintLeft_toLeftOf="@id/text_popular"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

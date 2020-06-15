@@ -1,6 +1,7 @@
 package app.my.movie;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 import app.my.movie.model.Movie;
+import app.my.movie.util.Utils;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
 
@@ -71,10 +73,17 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         String img_url = Utils.Image_W500+cat.getPoster();
         Glide.with(con).load(img_url).into(holder.poster);
         Log.d("img",img_url);
-        // Picasso.with(con).load(cat.getIcon()).transform(new CircleTransform()).placeholder(R.mipmap.a).into(holder.icon);
+        holder.itemView.setOnClickListener(v -> {
 
+            Intent i = new Intent(con,Movie_Page.class);
+            i.putExtra("id",cat.getID());
+            i.putExtra("over",cat.getOverview());
+            i.putExtra("poster",img_url);
+            i.putExtra("rate",cat.getRate());
+            i.putExtra("title",cat.getTitle());
+            con.startActivity(i);
+        });
 
-        //  setAnimation(holder.itemView, position);
 
 
 
