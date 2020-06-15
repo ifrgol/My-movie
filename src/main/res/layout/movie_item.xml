@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="4dp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@null"
+        android:id="@+id/card"
+        android:layout_marginLeft="10dp"
+        app:cardCornerRadius="15dp">
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:src="@drawable/t"
+            android:scaleType="fitXY"
+            android:id="@+id/poster"
+            android:background="@drawable/round_image"
+            />
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="title"
+        app:layout_constraintRight_toRightOf="@id/card"
+        app:layout_constraintLeft_toLeftOf="@id/card"
+        app:layout_constraintTop_toBottomOf="@id/card"
+        android:layout_marginTop="7dp"
+        android:textColor="#0f0f17"
+        android:maxLength="17"
+        android:textSize="17sp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
