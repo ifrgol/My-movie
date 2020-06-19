@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
                         String poster = jsonObject.getString("poster_path");
                         String overview = jsonObject.getString("overview");
                         int rate = jsonObject.getInt("vote_average");
-                        Movie movie = new Movie(id,title,poster,overview,String.valueOf(rate));
+                        String date = jsonObject.getString("release_date");
+                        Movie movie = new Movie(id,title,poster,overview,String.valueOf(rate),date);
                         latest_list.add(movie);
                     }
                     latest_adapter = new MovieAdapter(latest_list,context);
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context,"2 "+error.getMessage().toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(context,"2 "+error.getMessage(),Toast.LENGTH_LONG).show();
 
             }
         });
@@ -101,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
     public  void GetPopularMovies(){
 
         popular_url =Utils.Popular_API();
-        Toast.makeText(context,popular_url,Toast.LENGTH_LONG).show();
         System.out.println(popular_url);
 
         JsonObjectRequest jon =new JsonObjectRequest(Request.Method.GET, popular_url, null, new Response.Listener<JSONObject>() {
@@ -117,8 +117,9 @@ public class MainActivity extends AppCompatActivity {
                         String title = jsonObject.getString("title");
                         String poster = jsonObject.getString("poster_path");
                         String overview = jsonObject.getString("overview");
+                        String date = jsonObject.getString("release_date");
                         int rate = jsonObject.getInt("vote_average");
-                        Movie movie = new Movie(id,title,poster,overview,String.valueOf(rate));
+                        Movie movie = new Movie(id,title,poster,overview,String.valueOf(rate),date);
                         mylist.add(movie);
                     }
                     movieAdapter = new MovieAdapter(mylist,context);
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context,"2 "+error.getMessage().toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(context,"2 "+error.getMessage(),Toast.LENGTH_LONG).show();
 
             }
         });

@@ -81,6 +81,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
             i.putExtra("poster",img_url);
             i.putExtra("rate",cat.getRate());
             i.putExtra("title",cat.getTitle());
+            i.putExtra("date",cat.getDate());
             con.startActivity(i);
         });
 

@@ -25,7 +25,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/text_popular"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:textColor="#a4a6a9"
+                android:textColor="@color/body_text_color"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:text="Popular Movies"/>
@@ -57,7 +57,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/rec_popular"
                 android:id="@+id/text_latest"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:textColor="#a4a6a9"
+                android:textColor="@color/body_text_color"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="22dp"
                 android:text="Top Rated  "/>

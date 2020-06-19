@@ -2,7 +2,7 @@ package app.my.movie.model;
 
 public class Movie {
     private int ID;
-    private String title,poster,overview,rate;
+    private String title,poster,overview,rate,date;
 
     public Movie(int ID, String title, String poster, String overview, String rate) {
         this.ID = ID;
@@ -12,7 +12,24 @@ public class Movie {
         this.rate = rate;
     }
 
+    public Movie(int ID, String title, String poster, String overview, String rate, String date) {
+        this.ID = ID;
+        this.title = title;
+        this.poster = poster;
+        this.overview = overview;
+        this.rate = rate;
+        this.date = date;
+    }
+
     public Movie() {
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getID() {

@@ -19,23 +19,97 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/t"
+
             android:id="@+id/poster"
-            android:background="@drawable/round_square"
             android:scaleType="fitXY"/>
 
 
         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        app:layout_constraintTop_toBottomOf="@id/poster"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="15dp"
+        android:textSize="21sp"
+        android:textStyle="bold"
+            android:textColor="@color/text_color"
+        android:text="Ad Astara"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/title"
-            app:layout_constraintTop_toBottomOf="@id/poster"
-            android:layout_marginTop="15dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="15dp"
-            android:textSize="23sp"
+            android:id="@+id/date"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/title"
+            android:maxLength="4"
+            android:textSize="18sp"
+
+            android:textColor="@color/body_text_color"
+            android:text=""/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_marginTop="10dp"
+            android:id="@+id/rate"
+            app:layout_constraintLeft_toRightOf="@id/date"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/body_text_color"
+            android:drawablePadding="3dp"
+            android:drawableLeft="@drawable/ic_baseline_star_24"
+            android:text=""/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/plot"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="@id/title"
+            android:textSize="21sp"
             android:textStyle="bold"
-            android:textColor="#12153d"
-            android:text="Ad Astara"/>
+            android:textColor="@color/text_color"
+            android:text="Plot Summary"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/plot"
+            android:layout_marginTop="15dp"
+            android:id="@+id/summary"
+            app:layout_constraintLeft_toLeftOf="@id/date"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="10dp"
+            android:lineSpacingExtra="4dp"
+            android:textSize="18sp"
+            android:textColor="@color/body_text_color"
+            android:text=""/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/summary"
+            android:layout_marginTop="15dp"
+            android:id="@+id/cast"
+            android:text="Cast  Crew"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_color"
+            app:layout_constraintLeft_toLeftOf="@id/date"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cast"
+            android:id="@+id/rec"
+            android:layout_marginTop="10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/date"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 </RelativeLayout>
